@@ -25,6 +25,7 @@ export type PresetOptions<T extends ColorObject> = {
   defaultColorsTheme: keyof T;
   colors: T;
   themes: ReadonlyArray<keyof T> | readonly (keyof T)[];
+  extend?: boolean;
 };
 
 export default <T extends ColorObject>(obj: PresetOptions<T>) => {
@@ -65,14 +66,22 @@ export default <T extends ColorObject>(obj: PresetOptions<T>) => {
     ...themeColors,
   };
 
+  const extendable =
+    obj.extend ?? true
+      ? {
+          extend: {
+            colors,
+          },
+        }
+      : {
+          colors,
+        };
+
   return {
     theme: {
       customColors: themeKeys ?? [],
       defaultColorsTheme: obj.defaultColorsTheme ?? "light",
-
-      extend: {
-        colors,
-      },
+      ...extendable,
     },
     plugins: [plugin],
   };
