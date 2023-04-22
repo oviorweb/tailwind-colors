@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 2.0.1
+
+### Patch Changes
+
+- 3e899b6: Fix for small typescript type errors
+
 ## 2.0.0
 
 ### Major Changes
