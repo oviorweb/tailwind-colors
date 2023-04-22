@@ -14,10 +14,13 @@ describe('index.ts', () => {
   });
 
   it('should assemble and export a configuration object', () => {
-    const testOptions: PresetOptions = {
-      themes: ['light', 'dark'],
-      light: { /* theme colors */ },
-      dark: { /* theme colors */ },
+    const themes = ['light', 'dark'] as const;
+    const testOptions: PresetOptions<any> = {
+      themes,
+      colors: {
+        light: { /* theme colors */ },
+        dark: { /* theme colors */ },
+      },
       defaultColorsTheme: 'light',
     };
 

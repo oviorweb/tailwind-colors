@@ -1,23 +1,24 @@
-import { combineColorObjects, generateCombinedColors, generateThemeColorVariables, Themes } from "./utils";
+import { combineColorObjects, generateCombinedColors, generateThemeColorVariables, ThemeColors, Themes } from "./utils";
 export * from "./utils";
-export type PresetOptions = {
-  themes: string[];
-  [key: string]: any;
-  defaultColorsTheme: string;
+
+export type PresetOptions<T extends ThemeColors> = {
+  defaultColorsTheme: keyof T;
+  colors: T;
+  themes: ReadonlyArray<keyof T> | readonly (keyof T)[];
 }
 
-export default (obj: PresetOptions) => {
+export default <T extends ThemeColors>(obj: PresetOptions<T>) => {
   const themes = obj.themes;
-  const themeKeys = themes.map((theme: string) => {
-    const themeColors = obj[theme];
+  const themeKeys = themes.map((theme) => {
+    const themeColors = obj.colors[theme] as ThemeColors;
     return {
       name: theme,
       colors: generateThemeColorVariables(themeColors) ?? {}
     }
   });
 
-  const validObjectThemes = themes.map((theme: string) => {
-    return obj[theme];
+  const validObjectThemes = themes.map((theme) => {
+    return obj.colors[theme];
   }) as unknown as Themes;
 
   const otherObjectThemes = Object.keys(obj).filter((key) => {
@@ -26,9 +27,9 @@ export default (obj: PresetOptions) => {
   }).map((key) => {
     return {
       name: key,
-      colors: obj[key]
+      colors: obj.colors[key]
     };
-  });
+  }) as {name: string, colors: string}[];
 
   const themeColors = generateCombinedColors(validObjectThemes);
   const colors = {
@@ -43,7 +44,7 @@ export default (obj: PresetOptions) => {
   return {
     theme: {
       customColors: themeKeys ?? [],
-      defaultColorsTheme: obj.defaultColorTheme ?? 'light',
+      defaultColorsTheme: obj.defaultColorsTheme ?? 'light',
 
       extend: {
         colors
