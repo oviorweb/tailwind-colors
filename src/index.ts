@@ -6,6 +6,8 @@ export type PresetOptions = {
   defaultColorsTheme: string;
 }
 
+export * from "./utils";
+
 module.exports = (obj: PresetOptions) => {
   const themes = obj.themes;
   const themeKeys = themes.map((theme: string) => {
