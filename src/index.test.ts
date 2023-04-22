@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, jest } from "@jest/globals";
-import type { PresetOptions } from './index';
+import presetFunction, { PresetOptions } from './index';
 import { generateThemeColorVariables, generateCombinedColors, combineColorObjects } from './utils';
 
 jest.mock('./utils', () => ({
@@ -7,8 +7,6 @@ jest.mock('./utils', () => ({
   generateCombinedColors: jest.fn(),
   generateThemeColorVariables: jest.fn(),
 }));
-
-const presetFunction = require('./index');
 
 describe('index.ts', () => {
   beforeEach(() => {
