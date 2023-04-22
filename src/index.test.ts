@@ -62,6 +62,7 @@ describe("index.ts", () => {
     );
 
     const expectedResult = {
+      content: [],
       theme: {
         customColors: [
           { name: "light", colors: testThemeColorVariables.light },
@@ -131,6 +132,7 @@ describe("index.ts", () => {
     );
 
     const expectedResult = {
+      content: [],
       theme: {
         customColors: [
           { name: "light", colors: testThemeColorVariables.light },

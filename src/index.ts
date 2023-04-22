@@ -6,6 +6,8 @@ import {
   Themes,
 } from "./utils";
 import plugin from "./plugin";
+import type { Config } from "tailwindcss";
+import { RecursiveKeyValuePair, ResolvableTo } from "tailwindcss/types/config";
 
 export * from "./utils";
 
@@ -64,7 +66,7 @@ export default <T extends ColorObject>(obj: PresetOptions<T>) => {
       })
     ),
     ...themeColors,
-  };
+  } as unknown as ResolvableTo<RecursiveKeyValuePair>;
 
   const extendable =
     obj.extend ?? true
@@ -83,6 +85,7 @@ export default <T extends ColorObject>(obj: PresetOptions<T>) => {
       defaultTheme: obj.defaultTheme ?? "light",
       ...extendable,
     },
+    content: [],
     plugins: [plugin],
-  };
+  } satisfies Config;
 };
