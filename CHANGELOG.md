@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 0.1.0
+
+### Minor Changes
+
+- c5e5f6f: Put the utils accessible to import with reverseShade
+
 ## 0.0.2
 
 ### Patch Changes
