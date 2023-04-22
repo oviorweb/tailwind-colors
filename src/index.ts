@@ -5,6 +5,8 @@ import {
   ThemeColors,
   Themes,
 } from "./utils";
+import plugin from "./plugin";
+
 export * from "./utils";
 
 type ColorObject = {
@@ -72,6 +74,6 @@ export default <T extends ColorObject>(obj: PresetOptions<T>) => {
         colors,
       },
     },
-    plugins: [require("./plugin")],
+    plugins: [plugin],
   };
 };
