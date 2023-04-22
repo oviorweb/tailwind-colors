@@ -1,14 +1,12 @@
 import { combineColorObjects, generateCombinedColors, generateThemeColorVariables, Themes } from "./utils";
-
+export * from "./utils";
 export type PresetOptions = {
   themes: string[];
   [key: string]: any;
   defaultColorsTheme: string;
 }
 
-export * from "./utils";
-
-module.exports = (obj: PresetOptions) => {
+export default (obj: PresetOptions) => {
   const themes = obj.themes;
   const themeKeys = themes.map((theme: string) => {
     const themeColors = obj[theme];
