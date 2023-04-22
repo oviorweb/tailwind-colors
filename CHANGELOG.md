@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 0.1.3
+
+### Patch Changes
+
+- c7a2585: from module export to export default
+
 ## 0.1.2
 
 ### Patch Changes
