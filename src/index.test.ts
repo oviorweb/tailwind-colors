@@ -29,7 +29,7 @@ describe("index.ts", () => {
           /* theme colors */
         },
       },
-      defaultColorsTheme: "light",
+      defaultTheme: "light",
     };
 
     const testThemeColorVariables = {
@@ -39,7 +39,7 @@ describe("index.ts", () => {
       dark: {
         /* generated variables */
       },
-      defaultColorsTheme: "light",
+      defaultTheme: "light",
     };
 
     (generateThemeColorVariables as jest.Mock).mockImplementation(
@@ -67,7 +67,7 @@ describe("index.ts", () => {
           { name: "light", colors: testThemeColorVariables.light },
           { name: "dark", colors: testThemeColorVariables.dark },
         ],
-        defaultColorsTheme: "light",
+        defaultTheme: "light",
         extend: {
           colors: {
             ...testCombinedColorObjects,
@@ -97,7 +97,7 @@ describe("index.ts", () => {
           /* theme colors */
         },
       },
-      defaultColorsTheme: "light",
+      defaultTheme: "light",
       extend: false,
     };
 
@@ -108,7 +108,7 @@ describe("index.ts", () => {
       dark: {
         /* generated variables */
       },
-      defaultColorsTheme: "light",
+      defaultTheme: "light",
     };
 
     (generateThemeColorVariables as jest.Mock).mockImplementation(
@@ -136,7 +136,7 @@ describe("index.ts", () => {
           { name: "light", colors: testThemeColorVariables.light },
           { name: "dark", colors: testThemeColorVariables.dark },
         ],
-        defaultColorsTheme: "light",
+        defaultTheme: "light",
         colors: {
           ...testCombinedColorObjects,
           ...testCombinedColors,

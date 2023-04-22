@@ -1,7 +1,6 @@
 import { describe, jest, expect, it, beforeEach } from "@jest/globals";
-import { hexToRgb, parseColors, Theme } from "../utils";
+import { parseColors, Theme } from "../utils";
 import pluginFunction from "./index";
-import plugin from "tailwindcss/types/config";
 
 jest.mock("../utils", () => {
   return {
@@ -62,7 +61,7 @@ describe("plugin", () => {
     ).mockImplementation((key: string, defaultValue: any) => {
       if (key === "customColors") {
         return customColors;
-      } else if (key === "defaultColorsTheme") {
+      } else if (key === "defaultTheme") {
         return "light";
       }
       return defaultValue;

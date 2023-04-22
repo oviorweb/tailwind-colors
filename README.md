@@ -24,7 +24,7 @@ export type Theme = (typeof themes)[number]; // Can use wherever you want
 export default {
   presets: [
     TailwindColors({
-      defaultColorsTheme: "light",
+      defaultTheme: "light",
       themes,
       extend: false,
       colors: {
@@ -62,7 +62,7 @@ In this example, we've defined two themes, `light` and `dark`, each with their o
 
 ## Configuration
 
-- `defaultColorsTheme`: The default theme to be used when no theme is specified. It should be one of the keys in the `themes` array.
+- `defaultTheme`: The default theme to be used when no theme is specified. It should be one of the keys in the `themes` array.
 - `themes`: An array of theme names. Each theme must have a corresponding key in the `colors` object.
 - `colors`: An object containing color definitions for each theme. Each theme should have a corresponding key in the `themes` array.
 - `extend`: (optional) A boolean value that determines whether the colors should extend or override the default colors of Tailwind CSS. By default, it is set to `true`.
@@ -71,7 +71,7 @@ In this example, we've defined two themes, `light` and `dark`, each with their o
 
 ```ts
 TailwindColors({
-  defaultColorsTheme: "light",
+  defaultTheme: "light",
   themes: ["light", "dark", "halloween"] as const,
   colors: {
     light: {

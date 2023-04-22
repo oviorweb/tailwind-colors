@@ -3,7 +3,7 @@ import { Theme, parseColors } from "../utils";
 
 const themeConfig = plugin(({ addBase, theme, addVariant }) => {
   const customColors = theme("customColors", []) satisfies Theme[];
-  const defaultColorsTheme: string = theme("defaultColorsTheme", "light");
+  const defaultTheme: string = theme("defaultTheme", "light");
 
   for (const theme of customColors.map((theme: Theme) => theme.name)) {
     addVariant(theme, `:root[data-theme="${theme}"] &`);
@@ -18,7 +18,7 @@ const themeConfig = plugin(({ addBase, theme, addVariant }) => {
       },
       {} as Record<string, string>
     );
-    if (theme.name === defaultColorsTheme) {
+    if (theme.name === defaultTheme) {
       return {
         ":root": {
           ...colorObjectRgb,
