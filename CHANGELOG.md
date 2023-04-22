@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 2.0.0
+
+### Major Changes
+
+- a932b9d: Change defaultColorsTheme to defaultTheme for shorter, more readable name
+
 ## 1.1.0
 
 ### Minor Changes
