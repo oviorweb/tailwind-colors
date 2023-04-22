@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 1.0.2
+
+### Patch Changes
+
+- 16d8969: Fix the types when a object was passed in
+
 ## 1.0.1
 
 ### Patch Changes
