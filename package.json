@@ -1,7 +1,12 @@
 {
   "name": "@oviorweb/tailwind-colors",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/oviorweb/tailwind-colors",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "scripts": {
     "test": "jest",
@@ -11,7 +16,8 @@
     "postbuild": "tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",
     "release-channel": "node ./scripts/release-channel.js",
-    "release-notes": "node ./scripts/release-notes.js"
+    "release-notes": "node ./scripts/release-notes.js",
+    "release": "pnpm run build && changeset publish"
   },
   "peerDependencies": {
     "tailwindcss": ">=3.3.0"
