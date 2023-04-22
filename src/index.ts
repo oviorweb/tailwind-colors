@@ -7,13 +7,25 @@ import {
 } from "./utils";
 export * from "./utils";
 
-export type PresetOptions<T extends ThemeColors> = {
+type ColorObject = {
+  [color: string]:
+    | {
+        [key: string]:
+          | string
+          | {
+              [shade: string]: string;
+            };
+      }
+    | string;
+};
+
+export type PresetOptions<T extends ColorObject> = {
   defaultColorsTheme: keyof T;
   colors: T;
   themes: ReadonlyArray<keyof T> | readonly (keyof T)[];
 };
 
-export default <T extends ThemeColors>(obj: PresetOptions<T>) => {
+export default <T extends ColorObject>(obj: PresetOptions<T>) => {
   const themes = obj.themes;
   const themeKeys = themes.map((theme) => {
     const themeColors = obj.colors[theme] as ThemeColors;
