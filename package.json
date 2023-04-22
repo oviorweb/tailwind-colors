@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "swcify": "swc ./src/index.ts --out-dir ./dist",
+    "swcify": "swc ./src --out-dir ./dist",
     "build": "npm run swcify",
     "dev": "npm run swcify -- --watch",
     "postbuild": "tsc --emitDeclarationOnly",

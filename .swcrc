@@ -9,6 +9,7 @@
     "lazy": false,
     "noInterop": false
   },
+  "exclude": [".test.js", ".test.ts"],
   "jsc": {
     "parser": {
       "syntax": "typescript",
