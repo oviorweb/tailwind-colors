@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 1.0.0
+
+### Major Changes
+
+- 943415e: Change the API to accept a colors array instead. Better typings for themes.
+
 ## 0.1.3
 
 ### Patch Changes
