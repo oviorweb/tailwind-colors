@@ -1,5 +1,15 @@
 # @oviorweb/tailwind-colors
 
+## 1.1.0
+
+### Minor Changes
+
+- 73ab7c6: Add the option extend
+
+### Patch Changes
+
+- c2d15da: Fix typo for colors
+
 ## 1.0.3
 
 ### Patch Changes
