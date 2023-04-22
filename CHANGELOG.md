@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 0.1.2
+
+### Patch Changes
+
+- 599c496: Compile all the typescript files in the directory
+
 ## 0.1.1
 
 ### Patch Changes
