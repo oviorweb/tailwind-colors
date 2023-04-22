@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 0.1.1
+
+### Patch Changes
+
+- f724768: Add the utils straight into the package
+
 ## 0.1.0
 
 ### Minor Changes
