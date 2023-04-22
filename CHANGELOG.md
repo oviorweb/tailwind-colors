@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 1.0.3
+
+### Patch Changes
+
+- 3f94b39: Add a plugin default export
+
 ## 1.0.2
 
 ### Patch Changes
