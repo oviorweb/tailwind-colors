@@ -1,11 +1,15 @@
 import { RGB } from "./hex-to-rgb";
 
-export function parseHslString(hslString: string): { h: number, s: number, l: number } {
+export function parseHslString(hslString: string): {
+  h: number;
+  s: number;
+  l: number;
+} {
   const regex = /hsl\((\d+)(?:deg)?\s*,\s*(\d+)%\s*,\s*(\d+)%\)/i;
   const match = hslString.match(regex);
 
   if (!match) {
-    throw new Error('Invalid HSL string');
+    throw new Error("Invalid HSL string");
   }
 
   const [, hStr, sStr, lStr] = match;
@@ -30,7 +34,11 @@ export function hslToRgb(hsl: string): RGB {
 
   if (s === 0) {
     // achromatic
-    return { r: Math.round(l * 255), g: Math.round(l * 255), b: Math.round(l * 255) };
+    return {
+      r: Math.round(l * 255),
+      g: Math.round(l * 255),
+      b: Math.round(l * 255),
+    };
   }
 
   const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
@@ -41,5 +49,9 @@ export function hslToRgb(hsl: string): RGB {
   const g = hueToRgb(p, q, hNormalized);
   const b = hueToRgb(p, q, hNormalized - 1 / 3);
 
-  return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
+  return {
+    r: Math.round(r * 255),
+    g: Math.round(g * 255),
+    b: Math.round(b * 255),
+  };
 }

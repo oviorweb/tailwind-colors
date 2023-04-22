@@ -1,5 +1,5 @@
 import { OpacityConfig, withOpacityValue } from "./opacity-value";
-import { ThemeColors } from './theme-colors';
+import { ThemeColors } from "./theme-colors";
 
 type Themes = {
   [themeName: string]: ThemeColors;
@@ -27,11 +27,15 @@ function generateCombinedColors(themes: Themes): CombinedColors {
       }
 
       if (typeof colorShades === "string") {
-        combinedColors[colorName]["DEFAULT"] = withOpacityValue(`--color-${colorName}`);
+        combinedColors[colorName]["DEFAULT"] = withOpacityValue(
+          `--color-${colorName}`
+        );
         return;
       }
       Object.entries(colorShades).forEach(([shade, value]) => {
-        combinedColors[colorName][shade] = withOpacityValue(`--color-${colorName}-${shade}`);
+        combinedColors[colorName][shade] = withOpacityValue(
+          `--color-${colorName}-${shade}`
+        );
       });
     });
   });

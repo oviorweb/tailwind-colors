@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2019",
-    "lib": [
-      "ES2019"
-    ],
+    "lib": ["ES2019"],
     "module": "CommonJS",
     "declaration": true,
     "declarationMap": false,
@@ -15,11 +13,6 @@
     "outDir": "dist",
     "allowJs": true
   },
-  "include": [
-    "./src/index.ts",
-    "./tests/index.ts"
-  ],
-  "exclude": [
-    "./tests/index.test.ts"
-  ]
+  "include": ["./src/index.ts"],
+  "exclude": ["./tests/index.test.ts"]
 }

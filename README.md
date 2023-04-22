@@ -19,8 +19,8 @@ module.exports = {
     // ...
   },
   presets: [
-    require('@oviorweb/tailwind-colors'),
+    require("@oviorweb/tailwind-colors"),
     // ...
   ],
-}
+};
 ```

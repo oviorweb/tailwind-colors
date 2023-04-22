@@ -1,50 +1,73 @@
 import { describe, it, expect, beforeEach, jest } from "@jest/globals";
-import presetFunction, { PresetOptions } from './index';
-import { generateThemeColorVariables, generateCombinedColors, combineColorObjects } from './utils';
+import presetFunction, { PresetOptions } from "./index";
+import {
+  generateThemeColorVariables,
+  generateCombinedColors,
+  combineColorObjects,
+} from "./utils";
 
-jest.mock('./utils', () => ({
+jest.mock("./utils", () => ({
   combineColorObjects: jest.fn(),
   generateCombinedColors: jest.fn(),
   generateThemeColorVariables: jest.fn(),
 }));
 
-describe('index.ts', () => {
+describe("index.ts", () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
-  it('should assemble and export a configuration object', () => {
-    const themes = ['light', 'dark'] as const;
+  it("should assemble and export a configuration object", () => {
+    const themes = ["light", "dark"] as const;
     const testOptions: PresetOptions<any> = {
       themes,
       colors: {
-        light: { /* theme colors */ },
-        dark: { /* theme colors */ },
+        light: {
+          /* theme colors */
+        },
+        dark: {
+          /* theme colors */
+        },
       },
-      defaultColorsTheme: 'light',
+      defaultColorsTheme: "light",
     };
 
     const testThemeColorVariables = {
-      light: { /* generated variables */ },
-      dark: { /* generated variables */ },
-      defaultColorsTheme: 'light',
+      light: {
+        /* generated variables */
+      },
+      dark: {
+        /* generated variables */
+      },
+      defaultColorsTheme: "light",
     };
 
-    (generateThemeColorVariables as jest.Mock).mockImplementation((themeName) => testThemeColorVariables[themeName as keyof typeof testThemeColorVariables]);
+    (generateThemeColorVariables as jest.Mock).mockImplementation(
+      (themeName) =>
+        testThemeColorVariables[
+          themeName as keyof typeof testThemeColorVariables
+        ]
+    );
 
-    const testCombinedColors = { /* combined colors */ };
+    const testCombinedColors = {
+      /* combined colors */
+    };
     (generateCombinedColors as jest.Mock).mockReturnValue(testCombinedColors);
 
-    const testCombinedColorObjects = { /* combined color objects */ };
-    (combineColorObjects as jest.Mock).mockReturnValue(testCombinedColorObjects);
+    const testCombinedColorObjects = {
+      /* combined color objects */
+    };
+    (combineColorObjects as jest.Mock).mockReturnValue(
+      testCombinedColorObjects
+    );
 
     const expectedResult = {
       theme: {
         customColors: [
-          { name: 'light', colors: testThemeColorVariables.light },
-          { name: 'dark', colors: testThemeColorVariables.dark },
+          { name: "light", colors: testThemeColorVariables.light },
+          { name: "dark", colors: testThemeColorVariables.dark },
         ],
-        defaultColorsTheme: 'light',
+        defaultColorsTheme: "light",
         extend: {
           colors: {
             ...testCombinedColorObjects,
@@ -52,9 +75,7 @@ describe('index.ts', () => {
           },
         },
       },
-      plugins: [
-        expect.anything(),
-      ],
+      plugins: [expect.anything()],
     };
 
     const result = presetFunction(testOptions);

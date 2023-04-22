@@ -7,7 +7,9 @@ function isHex(colorString: string): boolean {
 }
 
 function isHsl(colorString: string): boolean {
-  return /^hsl\(\d{1,3}(?:deg)?\s*,\s*\d{1,3}%\s*,\s*\d{1,3}%\)$/i.test(colorString);
+  return /^hsl\(\d{1,3}(?:deg)?\s*,\s*\d{1,3}%\s*,\s*\d{1,3}%\)$/i.test(
+    colorString
+  );
 }
 
 export function parseColors(color: string): RGB {

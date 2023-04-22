@@ -1,8 +1,8 @@
-import { reverseShades } from './reverse-shades';
-import {describe, expect, it} from "@jest/globals";
+import { reverseShades } from "./reverse-shades";
+import { describe, expect, it } from "@jest/globals";
 
-describe('reverseShades', () => {
-  it('should reverse the shades', () => {
+describe("reverseShades", () => {
+  it("should reverse the shades", () => {
     const shades = {
       "50": "#f8fafc",
       "100": "#f1f5f9",

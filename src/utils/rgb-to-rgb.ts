@@ -12,7 +12,7 @@ function parseRgb(rgb: string): RGB {
   }
   const [, r, g, b] = res;
 
-  if(parseInt(r) > 255 || parseInt(g) > 255 || parseInt(b) > 255) {
+  if (parseInt(r) > 255 || parseInt(g) > 255 || parseInt(b) > 255) {
     throw new Error("Invalid rgb string");
   }
 
@@ -20,7 +20,11 @@ function parseRgb(rgb: string): RGB {
   const gCalculated = isPercent(g) ? (parseInt(g) / 100) * 255 : parseInt(g);
   const bCalculated = isPercent(b) ? (parseInt(b) / 100) * 255 : parseInt(b);
 
-  return { r: Math.round(rCalculated), g: Math.round(gCalculated), b: Math.round(bCalculated) };
+  return {
+    r: Math.round(rCalculated),
+    g: Math.round(gCalculated),
+    b: Math.round(bCalculated),
+  };
 }
 export function rgbToRgb(rgb: string): RGB {
   return parseRgb(rgb);
