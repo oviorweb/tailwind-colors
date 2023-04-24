@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 2.1.0
+
+### Minor Changes
+
+- 371de4f: Add a with default functionality
+
 ## 2.0.2
 
 ### Patch Changes
