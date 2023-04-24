@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 2.1.2
+
+### Patch Changes
+
+- 18a46c8: Fix small bug with colors
+
 ## 2.1.1
 
 ### Patch Changes
