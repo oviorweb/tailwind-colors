@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 2.0.2
+
+### Patch Changes
+
+- 454ef4e: Add a way to add a default value to the tailwind config and change reverse shade to not reverse the default
+
 ## 2.0.1
 
 ### Patch Changes
