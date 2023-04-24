@@ -46,7 +46,7 @@ export default <T extends ColorObject>(obj: PresetOptions<T>) => {
 
   const otherObjectThemes = Object.keys(obj.colors)
     .filter((key) => {
-      if (key === "themes" || key === "defaultColorTheme") return false;
+      if (key === "themes" || key === "defaultTheme") return false;
       return !themes.includes(key);
     })
     .map((key) => {

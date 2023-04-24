@@ -3,10 +3,13 @@ type ColorShades = {
 };
 
 function reverseShades(shades: ColorShades): ColorShades {
-  const reversedShades: ColorShades = {};
+  const reversedShades: ColorShades = {
+    DEFAULT: shades.DEFAULT,
+  };
 
-  const shadeKeys = Object.keys(shades);
-  const shadeValues = Object.values(shades).reverse();
+  const shadeKeys = Object.keys(shades).filter((key) => key !== "DEFAULT");
+
+  const shadeValues = shadeKeys.map((key) => shades[key]).reverse();
 
   shadeKeys.forEach((key, index) => {
     reversedShades[key] = shadeValues[index];
