@@ -12,6 +12,10 @@ const themeConfig = plugin(({ addBase, theme, addVariant }) => {
   const themes = customColors.map((theme: Theme) => {
     const colorObjectRgb = Object.entries(theme.colors).reduce(
       (acc, [key, value]) => {
+        if (typeof value === "undefined") {
+          delete acc[key];
+          return acc;
+        }
         const rgb = parseColors(value);
         acc[key] = `${rgb.r} ${rgb.g} ${rgb.b}`;
         return acc;
