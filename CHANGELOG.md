@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 2.1.1
+
+### Patch Changes
+
+- 7fceb00: Add missing import
+
 ## 2.1.0
 
 ### Minor Changes
