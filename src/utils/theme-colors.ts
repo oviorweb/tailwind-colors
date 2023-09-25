@@ -24,7 +24,11 @@ function generateThemeColorVariables(theme: ThemeColors): {
       return;
     }
     Object.entries(colorKeys).forEach(([key, value]) => {
-      colorVariables[`--color-${colorName}-${key}`] = value;
+      if (key === "DEFAULT") {
+        colorVariables[`--color-${colorName}`] = value;
+      } else {
+        colorVariables[`--color-${colorName}-${key}`] = value;
+      }
     });
   });
 
