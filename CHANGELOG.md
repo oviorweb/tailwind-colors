@@ -1,5 +1,11 @@
 # @oviorweb/tailwind-colors
 
+## 3.0.0
+
+### Major Changes
+
+- ba68ed9: Change variable name in css variables to remove the -DEFAULT and just make the variable DEFAULT
+
 ## 2.1.2
 
 ### Patch Changes
