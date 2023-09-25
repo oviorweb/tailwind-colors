@@ -33,9 +33,15 @@ function generateCombinedColors(themes: Themes): CombinedColors {
         return;
       }
       Object.entries(colorShades).forEach(([shade, value]) => {
-        combinedColors[colorName][shade] = withOpacityValue(
-          `--color-${colorName}-${shade}`
-        );
+        if (shade === "DEFAULT") {
+          combinedColors[colorName][shade] = withOpacityValue(
+            `--color-${colorName}`
+          );
+        } else {
+          combinedColors[colorName][shade] = withOpacityValue(
+            `--color-${colorName}-${shade}`
+          );
+        }
       });
     });
   });
